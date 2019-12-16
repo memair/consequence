@@ -1,24 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## DB setup
 
-Things you may want to cover:
+### Dev
 
-* Ruby version
+```
+CREATE DATABASE trumped_development;
+CREATE USER trumped_development WITH PASSWORD 'password';
+ALTER USER trumped_development WITH SUPERUSER;
+GRANT ALL PRIVILEGES ON DATABASE "trumped_development" to trumped_development;
+```
 
-* System dependencies
+### Test
 
-* Configuration
+```
+CREATE DATABASE trumped_test;
+CREATE USER trumped_test WITH PASSWORD 'password';
+ALTER USER trumped_test WITH SUPERUSER;
+GRANT ALL PRIVILEGES ON DATABASE "trumped_test" to trumped_test;
+```
 
-* Database creation
+### db restarting
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+bundle exec rake db:drop RAILS_ENV=development
+bundle exec rake db:create RAILS_ENV=development
+bundle exec rake db:migrate RAILS_ENV=development

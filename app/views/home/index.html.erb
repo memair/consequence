@@ -1,0 +1,22 @@
+<div class="center jumbotron">
+  <center>
+  <h1>Trumped</h1>
+  <h2>connecting Trumped with Memair</h2>
+  <img src="trump_tweeting.jpg" width="50%" height="50%">
+  <% flash.each do |key, value| %>
+    <div class="<%= flash_class(key) %>">
+      <%= value %>
+    </div>
+  <% end %>
+  <% unless user_signed_in? %>
+    <%= button_to "Connect with Memair", user_memair_omniauth_authorize_path, id: "sign_in", class: "btn btn-lg btn-primary" %>
+  <% end %>
+
+  </center>
+</div>
+
+<script>
+  if(window.location.hash == '#install') {
+    document.getElementById('sign_in').click()
+  }
+</script>
