@@ -326,7 +326,7 @@ DEPENDENCIES
   omniauth-twitter (~> 1.4)
   pg (>= 0.18, < 2.0)
   pry
-  puma (~> 3.11)
+  puma (~> 3.12)
   rails (~> 6.0.0)
   sass-rails (~> 5)
   selenium-webdriver
