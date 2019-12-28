@@ -13,6 +13,3 @@ volumes:
 services:
   - postgresql
   - nginx
-
-hostnames:
-  - devconsequence.com: { proxy_to_host_port: 3000 }
