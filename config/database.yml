@@ -5,18 +5,18 @@ default: &default
 
 development:
   <<: *default
-  database: trumped_development
-  username: trumped_development
+  database: consequence_development
+  username: consequence_development
   password: password
 
 test:
   <<: *default
-  database: trumped_test
-  username: trumped_test
+  database: consequence_test
+  username: consequence_test
   password: password
 
 production:
   <<: *default
   username: <%= ENV["DB_USERNAME"] %>
   password: <%= ENV["DB_PASSWORD"] %>
-  database: "trumped"
+  database: "consequence"
