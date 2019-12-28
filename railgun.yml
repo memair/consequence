@@ -1,0 +1,18 @@
+# https://dev-accel.shopify.io/dev/railgun/Railgun-Config
+name: consequence
+
+vm:
+  image:      /opt/dev/misc/railgun-images/default
+  ip_address: 192.168.64.98
+  memory:     2G
+  cores:      2
+
+volumes:
+  root: 2G
+
+services:
+  - postgresql
+  - nginx
+
+hostnames:
+  - devconsequence.com: { proxy_to_host_port: 3000 }

@@ -5,19 +5,19 @@
 ### Dev
 
 ```
-CREATE DATABASE trumped_development;
-CREATE USER trumped_development WITH PASSWORD 'password';
-ALTER USER trumped_development WITH SUPERUSER;
-GRANT ALL PRIVILEGES ON DATABASE "trumped_development" to trumped_development;
+CREATE DATABASE consequence_development;
+CREATE USER consequence_development WITH PASSWORD 'password';
+ALTER USER consequence_development WITH SUPERUSER;
+GRANT ALL PRIVILEGES ON DATABASE "consequence_development" to consequence_development;
 ```
 
 ### Test
 
 ```
-CREATE DATABASE trumped_test;
-CREATE USER trumped_test WITH PASSWORD 'password';
-ALTER USER trumped_test WITH SUPERUSER;
-GRANT ALL PRIVILEGES ON DATABASE "trumped_test" to trumped_test;
+CREATE DATABASE consequence_test;
+CREATE USER consequence_test WITH PASSWORD 'password';
+ALTER USER consequence_test WITH SUPERUSER;
+GRANT ALL PRIVILEGES ON DATABASE "consequence_test" to consequence_test;
 ```
 
 ### db restarting
