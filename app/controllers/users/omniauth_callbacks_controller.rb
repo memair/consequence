@@ -4,8 +4,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     if @user.persisted?
       sign_in(:user, @user)
-      if @user.google_access_token.nil?
-        redirect_to user_google_oauth2_omniauth_authorize_path
+      if @user.twitter_access_token.nil?
+        redirect_to user_twitter_omniauth_authorize_path
       else
         flash[:notice] = 'Successfully logged'
         redirect_to root_path
@@ -17,7 +17,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def twitter
-    # implement
+    current_user.update(
+      twitter_access_token: request.env['omniauth.auth']['extra'].access_token.token,
+      twitter_access_token_secret: request.env['omniauth.auth']['extra'].access_token.secret,
+      twitter_uid: request.env['omniauth.auth']['uid']
+    )
     redirect_to root_path
   end
 end

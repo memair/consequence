@@ -21,6 +21,22 @@ class User < ApplicationRecord
     user
   end
 
+  def twitter_client()
+    client = Twitter::REST::Client.new do |config|
+      config.consumer_key        = ENV['TWITTER_API_KEY']
+      config.consumer_secret     = ENV['TWITTER_API_SECRET']
+      config.access_token        = self.twitter_access_token
+      config.access_token_secret = self.twitter_access_token_secret
+    end
+    client
+  end
+
+  def retweet()
+    client = self.twitter_client
+    tweet_id = 1211052127180603393
+    client.retweet(tweet_id)
+  end
+
   private
 
     def revoke_memair_token
