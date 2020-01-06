@@ -10,6 +10,7 @@ gem 'sass-rails', '~> 5'
 gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
+gem 'frozen_record', '~> 0.16'
 
 gem 'bootstrap',           '~> 4.1'
 gem 'data-confirm-modal',  '1.6.2'

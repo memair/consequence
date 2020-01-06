@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @goal.name %>
+</p>
+
+<p>
+  <strong>Troll:</strong>
+  <%= @goal.troll.name %>
+</p>
+
+<p>
+  <strong>query:</strong>
+  <%= @goal.query %>
+</p>
+
+<p>
+  <strong>mapping:</strong>
+  <%= @goal.mapping %>
+</p>
+
+<p>
+  <strong>trigger_calculation:</strong>
+  <%= @goal.trigger_calculation %>
+</p>
+
+<p>
+  <strong>trigger_type:</strong>
+  <%= @goal.trigger_type %>
+</p>
+
+<p>
+  <strong>trigger_value:</strong>
+  <%= @goal.trigger_value %>
+</p>
+
+<%= link_to 'Edit', edit_goal_path(@goal) %> |
+<%= link_to 'Back', goals_path %>
