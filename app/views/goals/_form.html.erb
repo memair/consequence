@@ -1,0 +1,52 @@
+<%= form_with(model: goal, local: true) do |form| %>
+  <% if goal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(goal.errors.count, "error") %> prohibited this goal from being saved:</h2>
+
+      <ul>
+        <% goal.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <label for="goal_troll_twitter_id">Troll</label>
+    <%= select("goal", "troll_twitter_id", @trolls.sort, prompt: "Choose a troll...") %>
+  </div>
+
+  <div class="field">
+    <%= form.label :query %>
+    <%= form.text_area :query %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mapping %>
+    <%= form.text_field :mapping %>
+  </div>
+
+  <div class="field">
+    <%= form.label :trigger_calculation %>
+    <%= form.text_field :trigger_calculation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :trigger_type %>
+    <%= form.text_field :trigger_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :trigger_value %>
+    <%= form.text_field :trigger_value %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

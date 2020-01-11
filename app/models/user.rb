@@ -3,6 +3,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:memair, :twitter]
 
+  has_many :goals
+
   def self.from_memair_omniauth(omniauth_info)
     data        = omniauth_info.info
     credentials = omniauth_info.credentials
