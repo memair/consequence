@@ -35,6 +35,8 @@ class GoalsController < ApplicationController
   end
 
   def update
+    @trolls = Troll.all.map { |t| [t.name, t.twitter_id] }
+    
     respond_to do |format|
       if @goal.update(goal_params)
         format.html { redirect_to @goal, notice: 'Goal was successfully updated.' }

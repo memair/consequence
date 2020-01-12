@@ -6,33 +6,12 @@
 </p>
 
 <p>
-  <strong>Troll:</strong>
-  <%= @goal.troll.name %>
-</p>
-
-<p>
   <strong>query:</strong>
   <%= @goal.query %>
 </p>
 
 <p>
-  <strong>mapping:</strong>
-  <%= @goal.mapping %>
-</p>
-
-<p>
-  <strong>trigger_calculation:</strong>
-  <%= @goal.trigger_calculation %>
-</p>
-
-<p>
-  <strong>trigger_type:</strong>
-  <%= @goal.trigger_type %>
-</p>
-
-<p>
-  <strong>trigger_value:</strong>
-  <%= @goal.trigger_value %>
+  This goal will retweet <b><%= @goal.troll.name %></b> if the <%= @goal.trigger_type.upcase %> of <i><%= @goal.mapping %></i> <%= @goal.trigger_calculation %> <%= @goal.trigger_value %>
 </p>
 
 <%= link_to 'Edit', edit_goal_path(@goal) %> |

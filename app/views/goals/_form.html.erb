@@ -33,12 +33,12 @@
 
   <div class="field">
     <%= form.label :trigger_calculation %>
-    <%= form.text_field :trigger_calculation %>
+    <%= form.select :trigger_calculation, ['==', '!=', '>=', '>', '<=', '<'] %>
   </div>
 
   <div class="field">
     <%= form.label :trigger_type %>
-    <%= form.text_field :trigger_type %>
+    <%= form.select :trigger_type, ['count', 'sum', 'avg'] %>
   </div>
 
   <div class="field">

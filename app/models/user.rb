@@ -23,7 +23,7 @@ class User < ApplicationRecord
     user
   end
 
-  def twitter_client()
+  def twitter_client
     client = Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV['TWITTER_API_KEY']
       config.consumer_secret     = ENV['TWITTER_API_SECRET']
@@ -33,9 +33,9 @@ class User < ApplicationRecord
     client
   end
 
-  def retweet()
+  def retweet(troll)
     client = self.twitter_client
-    tweet_id = 1211052127180603393
+    tweet_id = troll.get_tweet_id(client)
     client.retweet(tweet_id)
   end
 
